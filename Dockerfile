@@ -1,11 +1,11 @@
 FROM alpine
-MAINTAINER Emmanuel Frecon <efrecon@gmail.com>
+MAINTAINER Eric Bellotti <ericb@summit-tech.ca>
 
-RUN apk add --update-cache python py-numpy py-requests && \
-    rm -rf /var/cache/apk/*
+RUN apk add --no-cache --update-cache python3 py3-requests py3-numpy
 
 COPY run /opt/websockify/
 COPY websockify/ /opt/websockify/websockify/
+COPY www/ /www/
 
 # Expose two volumes to (possibly) host configuration files needed on the
 # command line, e.g. keys and certificates for WSS access, files served for

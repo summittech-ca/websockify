@@ -505,6 +505,8 @@ def websockify_init():
             help="run webserver on same port. Serve files from DIR.")
     parser.add_option("--web-auth", action="store_true",
             help="require authentication to access webserver.")
+    parser.add_option("--file_only", action="store_true",
+            help="disable directory listings on webserver.")
     parser.add_option("--wrap-mode", default="exit", metavar="MODE",
             choices=["exit", "ignore", "respawn"],
             help="action to take when the wrapped program exits "
